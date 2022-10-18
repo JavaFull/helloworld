@@ -58,6 +58,7 @@
   - [芋道源码](https://www.iocoder.cn/)
   - [spring-boot-bulking](https://github.com/aalansehaiyang/spring-boot-bulking)
   - [spring-boot](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NzYyNjQzNg==&action=getalbum&album_id=1874600102896467974#wechat_redirect)
+  - Mybatis
 - 微服务技术栈
   - [RuoYi-Cloud](https://github.com/yangzongzhuan/RuoYi-Cloud)
   - Spring Cloud Gateway
@@ -118,6 +119,10 @@
   - Flink
     - [尚硅谷大数据之Flink实时数仓3.0](https://www.bilibili.com/video/BV1TG411a7nL/?spm_id_from=333.999.0.0&vd_source=d4842a1fb1b7f14826addcf047c30414)
     - [尚硅谷Flink1.13](https://www.bilibili.com/video/BV133411s7Sa/?spm_id_from=333.999.0.0&vd_source=d4842a1fb1b7f14826addcf047c30414)
+  - HBase
+  - Clickhouse
+  - Pulsar
+  - Vector
 - 面试
   - [大厂面试重点](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NzYyNjQzNg==&action=getalbum&album_id=1911852085562703875&scene=126#wechat_redirect)
   - [大厂面试重点](https://mp.weixin.qq.com/s/AFoxufhKBkL6S5pgWE2ISQ)
