@@ -49,6 +49,7 @@
   - [多线程50问](https://juejin.cn/post/7134480865089814565)
 - 关系型数据库
   - [21个MySQL表设计的经验准则](https://juejin.cn/post/7147135702604447758)
+  - [MySQL13连问](https://mp.weixin.qq.com/s?__biz=MzkzNTEwOTAxMA==&mid=2247484479&idx=1&sn=97358231f0f7086f0056fc5bb4e8afff&chksm=c2b24cc2f5c5c5d4935a4a0c0c8adb912a08e3aa7d7ac06f62dad5826e4093b732e4e3ff73b4&token=1786594806&lang=zh_CN&scene=21#wechat_redirect)
 - Java技术栈
   - JVM
     - [JVM调优](https://mp.weixin.qq.com/s/RWVV80vLYmQKRmObIcHPTg)
@@ -66,6 +67,7 @@
   - Open Feign生命式HTTP调用客户端
   - Sentinel熔断、限流、降级
   - Nacos注册中心/配置中心
+  - [Spring Cloud进阶](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU3MDAzNDg1MA==&action=getalbum&album_id=2042874937312346114&scene=173&from_msgid=2247517680&from_itemidx=1&count=3&nolastread=1#wechat_redirect)
 - 分布式架构技术
   - [左耳听风，分布式系统技术栈](https://time.geekbang.org/column/article/1512)
   - [软件架构设计](https://weread.qq.com/web/bookDetail/ac4325c071848780ac4f8d8)
@@ -135,6 +137,7 @@
   - [腾讯云后端15连问](https://juejin.cn/post/7075132492168036388)
   - [小厂后端10连问](https://juejin.cn/post/7079569282887057439)
   - [oppo后端16连问](https://juejin.cn/post/7087729302103392264)
+  - [Java面试题汇总](https://mp.weixin.qq.com/s/SARLx_J5oK6nYbby5YBxAg)
 
 - 其他
   - 系统监控
