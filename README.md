@@ -126,7 +126,7 @@
   - Pulsar
   - Vector
 - 面试
-  - [大厂面试重点](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NzYyNjQzNg==&action=getalbum&album_id=1911852085562703875&scene=126#wechat_redirect)
+  - [我想进大厂](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NzYyNjQzNg==&action=getalbum&album_id=1911852085562703875&scene=126#wechat_redirect)
   - [大厂面试重点](https://mp.weixin.qq.com/s/AFoxufhKBkL6S5pgWE2ISQ)
   - [重点知识点串讲‼️](https://lagou.feishu.cn/base/bascnjvTR7K2iVIKZ0FG0JuVcZc?table=tblNgqOOasDAvNM5&view=vew8bMFTac)
   - [32个Java面试必考点](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=1#/detail/pc?id=3)
