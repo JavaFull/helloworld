@@ -150,3 +150,8 @@
   - 系统监控
   - 自动化测试
   - CI/CD，自动化构建、打包、部署
+
+# 谁在招聘
+  - https://github.com/ruanyf/weekly/issues/2666
+
+
