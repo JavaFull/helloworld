@@ -125,5 +125,63 @@ export default {
 
 TransactionDefinition.PROPAGATION_REQUIRED	如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。这是默认值。
 
+## 异常处理
 
+### `@ControllerAdvice`注解或者`@RestControllerAdvice`注解
+
+全局异常处理器就是使用`@ControllerAdvice`注解或者`@RestControllerAdvice`注解。
+
+原理参见`RequestMappingHandlerAdapter.initControllerAdviceCache`
+
+### `@InitBinder`注解和`@NotBlank`注解
+`InitBinder`注解，用于在请求到达`Controller`前，对参数进行转化。比如对字符串参数进行去空格，对String类型对日期转换成Date类型。
+
+`@NotBlank`注解本身就可以对字符串参数进行去空格后验证长度是否为0，见`NotBlankValidator`类
+
+### 无法捕获异常的几种可能
+
+- 异常是否已被处理，即抛出异常后被catch，打印了日志或抛出了其它异常
+- 异常是否非Controller抛出，即在拦截器或过滤器中出现的异常
+
+## 参数校验
+
+Controller方法参数前加`@Validated`注解，参数类的字段上加上各种校验的注解
+
+### [自定义注解校验](http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E6%A0%A1%E9%AA%8C)
+
+比如想做一个防止表单提交时，通过注入手段进行攻击的校验，
+
+可以自定义一个Xss注解和校验器，可以在某个字段上加`@Xss`注解，全剧生效，可以在所有controller的父类controller里面使用`@InitBinder`注解来校验字符串类型
+
+除了使用注解，也可以单独在方法里面进行验证
+
+```java
+@Autowired
+protected Validator validator;
+
+public void importUser(SysUser user)
+{
+    BeanValidators.validateWithException(validator, user);
+}
+```
+
+### [自定义分组校验](http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E7%BB%84%E6%A0%A1%E9%AA%8C)
+
+需求来源：前面都是对一个类的属性进行校验，如果一个类的属性，在新增的时候需要校验，编辑的时候不需要校验，难道要定义另外一个相同的类？
+
+可以使用分组校验，加上分组标记。
+
+## 如何在SpringMVC的请求参数中使用枚举
+
+了解了[如何在SpringMVC的请求参数中使用枚举](https://www.baeldung.com/spring-enum-request-param)。主要会用到`StringToEnumConverterFactory`这个类。
+
+内部实现最终调用了`Enum.valueOf`
+
+`StringToEnumConverterFactory`属于**spring-core**模块下的convert包，**spring-core**模块后续要好好学一下。
+
+## [如何多次读取HttpServletRequest？](https://www.baeldung.com/spring-reading-httpservletrequest-multiple-times)
+
+继承`HttpServletRequestWrapper`，将inputstream缓存起来，最后加入到`OncePerRequestFilter`的filter chain中
+
+## [OncePerRequestFilter的作用](https://www.baeldung.com/spring-onceperrequestfilter)
 
