@@ -385,6 +385,21 @@ Swagger接口文档RuoYi Cloud提供的使用方式很具体，可以在需要�
 
 使用：方法上加`@RepeatSubmit`注解
 
+前端实现request.js
+```javascript
+      const s_url = sessionObj.url;                  // 请求地址
+      const s_data = sessionObj.data;                // 请求数据
+      const s_time = sessionObj.time;                // 请求时间
+      const interval = 1000;                         // 间隔时间(ms)，小于此时间视为重复提交
+      if (s_data === requestObj.data && requestObj.time - s_time < interval && s_url === requestObj.url) {
+        const message = '数据正在处理，请勿重复提交';
+        console.warn(`[${s_url}]: ` + message)
+        return Promise.reject(new Error(message))
+      } else {
+        cache.session.setJSON('sessionObj', requestObj)
+      }
+```
+
 ## 国际化
 
 了解即可
@@ -395,3 +410,33 @@ Swagger接口文档RuoYi Cloud提供的使用方式很具体，可以在需要�
 
 需要新建时，照着文档操作即可
 
+# 前端手册部分
+
+1. 通用方法，告诉使用者，前端通用的一些方法。
+2. 开发规范，告诉使用者，如何新开发一个页面。
+3. 请求流程，告诉使用者，request.js中封装了全局request拦截器、response拦截器、统一的错误处理、统一做了超时处理、baseURL设置
+    3.1.api文件夹，用来为存放每个模块的请求处理
+4. 引入依赖的方式
+5. 路由使用方式。路由文件在router/index.js中。
+通过新建菜单配置路由，会动态创建路由，不需要在router/index.js中配置
+   
+代表那些需要根据用户动态判断权限并通过addRoutes动态添加的页面，在`@/store/modules/permission`加载后端接口路由配置。
+
+> - 动态路由可以在系统管理-菜单管理进行新增和修改操作，前端加载会自动请求接口获取菜单信息并转换成前端对应的路由。
+> - 动态路由在生产环境下会默认使用路由懒加载，实现方式参考loadView方法的判断。
+
+6. 组件使用方式，
+
+- 引入和使用外部组件
+- 自定义组件并使用
+  - 组件通信：通过props来接收外界传递到组件内部的值
+  - 组件通信：使用$emit监听子组件触发的事件
+7. 权限使用
+8. 多级目录
+9. 页签缓存：菜单管理中可以配置，默认缓存。要写对路由和组件view的name，根据name匹配，匹配不到，或者不写name不会缓存。
+10. 使用图标。注意图标中图标的规格，RuoYi Cloud中图标都是 128*128 大小规格的
+11. 数据字典，前面分析后端手册中字典的部分已经分析过其实现
+12. 使用参数（配置）。动态修改配置，不需要去频繁修改配置文件。
+13. 异常处理。
+14. 应用路径。针对部署在不同的路径下的情况
+15. 内容复制。
