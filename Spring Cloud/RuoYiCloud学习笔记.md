@@ -4,13 +4,13 @@
 
 # 部署
 
-swagger访问地址
+## swagger访问地址
 
 http://localhost:8080/swagger-ui/index.html
 
 
 
-spring boot admin页面
+## spring boot admin页面
 
 http://localhost:9100/
 
@@ -19,7 +19,7 @@ http://localhost:9100/
 ruoyi/123456
 
 
-
+## 查看占用端口的进程
 由于是微服务项目，需要启动多个服务，占用多个端口，有可能端口被本地程序占用，导致某个微服务启动不了，可以使用
 
 ```
@@ -28,6 +28,24 @@ lsof -i:8080
 ```
 
 命令来查看占用端口的程序，kill -9 pid杀掉
+
+## nacos本地启动命令
+```shell
+./bin/startup.sh -m standalone
+```
+
+http://localhost:8848/nacos
+
+默认用户名密码nacos
+
+## sentinel本地启动命令
+```shell
+java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.api.port=8719 -jar sentinel-dashboard-1.8.5.jar
+```
+
+http://localhost:8718/
+
+默认用户名密码sentinel
 
 # 用户管理的实现
 
