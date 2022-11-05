@@ -29,6 +29,12 @@ lsof -i:8080
 
 命令来查看占用端口的程序，kill -9 pid杀掉
 
+## Docker报错：tried to kill container, but did not receive an exit event
+
+```shell
+killall Docker && open /Applications/Docker.app
+```
+
 ## nacos本地启动命令
 ```shell
 ./bin/startup.sh -m standalone
