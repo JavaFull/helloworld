@@ -136,11 +136,11 @@ git clone https://gitee.com/y_project/RuoYi-Cloud.git
 前端什么时候请求了字典接口？
 
 在dict/data.js中，定义了getDicts方法，根据字典类型，调用字典接口
-![img.png](img.png)
+![img.png](assert/img.png)
 
 getDicts方法在DictData组件中定义了install方法，内部调用了getDicts方法
 
-![img_1.png](img_1.png)
+![img_1.png](assert/img_1.png)
 
 DictData组件的install方法，是在main.js中调用的
 
@@ -161,19 +161,19 @@ export default {
 
 一些列的对字典的解析转换，在这个下面
 
-![img_2.png](img_2.png)
+![img_2.png](assert/img_2.png)
 
 配置一下这个[vue-data-dict](https://github.com/moxun1639/vue-data-dict)
 
-![img_4.png](img_4.png)
+![img_4.png](assert/img_4.png)
 
 根据[vue-data-dict](https://github.com/moxun1639/vue-data-dict)的使用说明，只用定义字典类型就可以
 
-![img_3.png](img_3.png)
+![img_3.png](assert/img_3.png)
 
 具体实现在这里
 
-![img_5.png](img_5.png)
+![img_5.png](assert/img_5.png)
 
 > 学会了vue项目在浏览器里直接断点调试
 
@@ -195,7 +195,7 @@ export default {
 - 自定义数据处理器（对某一个字段属性处理）
 - 自定义隐藏属性列
 - 导出对象的子列表（可以做到自动合并单元格），比如一个人有多个角色，可以导出这个人每个角色的角色内字段
-![img_6.png](img_6.png)
+![img_6.png](assert/img_6.png)
 
 ## 文件上传下载的实现
 
