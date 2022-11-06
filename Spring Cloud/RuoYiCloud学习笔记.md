@@ -44,6 +44,26 @@ http://localhost:8848/nacos
 
 默认用户名密码nacos
 
+### 配置nacos持久化
+
+修改conf/application.properties文件(nacos-server包conf目录下)，增加支持mysql数据源配置
+
+```properties
+# db mysql
+spring.datasource.platform=mysql
+db.num=1
+db.url.0=jdbc:mysql://localhost:3306/ry-config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+db.user=root
+db.password=password
+```
+
+## 创建数据库和表
+
+1、创建数据库ry-cloud并导入数据脚本ry_2021xxxx.sql（必须），quartz.sql（可选）
+
+2、创建数据库ry-config并导入数据脚本ry_config_2021xxxx.sql（必须）
+
+
 ## sentinel本地启动命令
 ```shell
 java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.api.port=8719 -jar sentinel-dashboard-1.8.5.jar
@@ -52,6 +72,52 @@ java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 http://localhost:8718/
 
 默认用户名密码sentinel
+
+## 运行基础模块（启动没有先后顺序）
+
+打开运行基础模块（启动没有先后顺序）
+
+- RuoYiGatewayApplication （网关模块 必须）
+- RuoYiAuthApplication （认证模块 必须）
+- RuoYiSystemApplication （系统模块 必须）
+- RuoYiMonitorApplication （监控中心 可选）
+- RuoYiGenApplication （代码生成 可选）
+- RuoYiJobApplication （定时任务 可选）
+- RuoYFileApplication （文件服务 可选）
+
+## 集成seata
+
+集成seata分布式事务（可选配置，默认不启用）
+
+创建数据库ry-seata并导入数据脚本ry_seata_2021xxxx.sql
+
+> 运行前需要先启动nacos，运行成功可以通过(http://localhost:8080 (opens new window))访问，但是不会出现静态页面
+
+# 前端运行
+
+```shell
+# 进入项目目录
+cd ruoyi-ui
+
+# 安装依赖
+npm install
+
+# 强烈建议不要用直接使用 cnpm 安装，会有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题。
+npm install --registry=https://registry.npmmirror.com
+
+# 本地开发 启动项目
+npm run dev
+```
+
+打开浏览器，输入：(http://localhost:80 (opens new window)) 默认账户/密码 admin/admin123）
+若能正确展示登录页面，并能成功登录，菜单及页面展示正常，则表明环境搭建成功
+
+建议使用Git克隆，因为克隆的方式可以和RuoYi随时保持更新同步。使用Git命令克隆
+
+git clone https://gitee.com/y_project/RuoYi-Cloud.git
+
+> 因为本项目是前后端完全分离的，所以需要前后端都单独启动好，才能进行访问。
+前端安装完node后，最好设置下淘宝的镜像源，不建议使用cnpm（可能会出现奇怪的问题）
 
 # 用户管理的实现
 
