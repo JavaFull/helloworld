@@ -79,7 +79,7 @@
   - [JVM调优](https://mp.weixin.qq.com/s/RWVV80vLYmQKRmObIcHPTg)
 - [Java全栈技术](https://pdai.tech/)
 - [陌溪的学习笔记](http://note.moguit.cn/#/)
-- [Java技术驿站](https://www.cmsblogs.com/)
+- [死磕Java](https://www.skjava.com/)
 - [芋道源码](https://www.iocoder.cn/)
 - [spring-boot-bulking](https://github.com/aalansehaiyang/spring-boot-bulking)
 - [spring-boot](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NzYyNjQzNg==&action=getalbum&album_id=1874600102896467974#wechat_redirect)
